@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block othercontent %}
+<h1>HERE IS MORE CONTENT!!!!</h1>
+{% endblock %}
+{% block content %}
+  <h1>SWEET</h1>
+  {% if number > 0.5 %}
+    <h2>Here's a random number: {{ number }}</h2>
+  {% else %}
+    <h2>Sorry, your number was too small :(</h2>
+  {% endif %}
+  <ul>Here are some instructors:
+    {% for instructor in instructors %}
+      <li class="{{ instructor }}">
+        <a href="{{ url_for('about', name=instructor) }}">
+          {{ instructor }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+  <h4>I'm working on a novel, what do you think?</h4>
+  <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex repellendus est impedit illum, voluptates accusamus facere modi asperiores quam beatae laboriosam possimus necessitatibus, optio nisi ipsa repellat officiis sunt! Aut!</div>
+  <div>Inventore obcaecati ipsa vero illo, voluptatibus porro deserunt reprehenderit dolor. Aperiam similique vitae pariatur provident expedita dolorem iure quod animi ipsam esse necessitatibus, sit. Qui molestiae vel, fuga iusto maiores.</div>
+  <div>At consectetur ipsam magnam illo quasi ullam qui sapiente error unde? Deleniti eum repellat libero, voluptatibus minima illum ipsa, accusantium consequatur ea, minus iure fugiat tenetur vel facilis. Laborum, velit!</div>
+  <div>Tempora doloremque omnis vero id tempore error aliquid non, repellendus, sit repudiandae quo tenetur dolorum, laudantium nihil iusto consequuntur fugiat blanditiis? Ullam, beatae non numquam id deleniti illo. Dicta, ad.</div>
+  <p>Only positive feedback thanks.</p>
+{% endblock %}
